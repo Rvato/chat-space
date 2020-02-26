@@ -26,13 +26,52 @@ Things you may want to cover:
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-## groups_usersテーブル
+|user_id|integer|null: false, foreign_key: true|
+|group_name|text|null: false, foreign_key: true|
+### Association
+- has_many :users
+- belongs_to :groups_users
 
+## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|e_mail|text|null: false, foreign_key: true|
+|password|text|null: false, foreign_key: true|
+|user_name|text|null: false, foreign_key: true|
+### Association
+- has_many :tweets
+- has_many :comments
+- belongs_to :groups_users
 
+## groups_usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|group_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :group
 - belongs_to :user
+
+## tweetsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|text|text|null: false, foreign_key: true|
+|image|string|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :user
+- belongs_to :group
+- has_many :comments
+
+## commentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|text|text|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :user
+- belongs_to :group
+- has_many :comments
