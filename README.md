@@ -29,10 +29,11 @@ Things you may want to cover:
 +------+----+-------+
 |group_id|integer|null: false|
 |user_id|integer|null: false|
-|group_name|text|null: false|
+|group_name|string|null: false|
 ### Association
 - has_many :groups_users
 - has_many :users, through: :groups_users
+- has_many :messages
 
 ## usersテーブル
 +------+----+-------+
@@ -41,11 +42,11 @@ Things you may want to cover:
 |user_id|integer|null: false|
 |e_mail|string|null: false, unique: true|
 |password|string|null: false|
-|user_name|text|null: false, index: true|
+|user_name|string|null: false, index: true|
 ### Association
-- has_many :tweets
 - has_many :groups_users
 - has_many :groups, through: :groups_users
+- has_many :messages
 
 ## groups_usersテーブル
 +------+----+-------+
@@ -57,7 +58,7 @@ Things you may want to cover:
 - belongs_to :group
 - belongs_to :user
 
-## tweetsテーブル
+## messagesテーブル
 +------+----+-------+
 |Column|Type|Options|
 +------+----+-------+
