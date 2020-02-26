@@ -26,6 +26,7 @@ Things you may want to cover:
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
+|group_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
 |group_name|text|null: false, foreign_key: true|
 ### Association
@@ -56,7 +57,7 @@ Things you may want to cover:
 ## tweetsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false, foreign_key: true|
+|text|text|null: false|
 |image|string|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
