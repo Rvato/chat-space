@@ -24,31 +24,33 @@ Things you may want to cover:
 * ...
 
 ## groupsテーブル
++------+----+-------+
 |Column|Type|Options|
-|------|----|-------|
-|group_id|integer|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
-|group_name|text|null: false, foreign_key: true|
++------+----+-------+
+|group_id|integer|null: false|
+|user_id|integer|null: false|
+|group_name|text|null: false|
 ### Association
 - has_many :groups_users
 - has_many :users, through: :groups_users
 
 ## usersテーブル
++------+----+-------+
 |Column|Type|Options|
-|------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|e_mail|text|null: false, foreign_key: true|
-|password|text|null: false, foreign_key: true|
-|user_name|text|null: false, foreign_key: true|
++------+----+-------+
+|user_id|integer|null: false|
+|e_mail|string|null: false, unique: true|
+|password|string|null: false|
+|user_name|text|null: false, index: true|
 ### Association
 - has_many :tweets
-- has_many :comments
 - has_many :groups_users
 - has_many :groups, through: :groups_users
 
 ## groups_usersテーブル
++------+----+-------+
 |Column|Type|Options|
-|------|----|-------|
++------+----+-------+
 |group_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
 ### Association
@@ -56,25 +58,13 @@ Things you may want to cover:
 - belongs_to :user
 
 ## tweetsテーブル
++------+----+-------+
 |Column|Type|Options|
-|------|----|-------|
-|text|text|null: false|
-|image|string|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
++------+----+-------+
+|text|text||
+|image|string||
+|user_id|integer|null: false|
+|group_id|integer|null: false|
 ### Association
 - belongs_to :user
 - belongs_to :group
-- has_many :comments
-
-## commentsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|text|text|null: false|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
-### Association
-- belongs_to :user
-- belongs_to :group
-- belongs_to :tweet
-- has_many :comments
