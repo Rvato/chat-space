@@ -23,6 +23,9 @@ Things you may want to cover:
 
 * ...
 
+## groupsテーブル
+|Column|Type|Options|
+|------|----|-------|
 ## groups_usersテーブル
 
 |Column|Type|Options|
