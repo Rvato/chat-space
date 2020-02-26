@@ -24,9 +24,8 @@ Things you may want to cover:
 * ...
 
 ## groupsテーブル
-+------+----+-------+
 |Column|Type|Options|
-+------+----+-------+
+|------|----|-------|
 |group_id|integer|null: false|
 |user_id|integer|null: false|
 |group_name|string|null: false|
@@ -36,9 +35,8 @@ Things you may want to cover:
 - has_many :messages
 
 ## usersテーブル
-+------+----+-------+
 |Column|Type|Options|
-+------+----+-------+
+|------|----|-------|
 |user_id|integer|null: false|
 |e_mail|string|null: false, unique: true|
 |password|string|null: false|
@@ -49,9 +47,8 @@ Things you may want to cover:
 - has_many :messages
 
 ## groups_usersテーブル
-+------+----+-------+
 |Column|Type|Options|
-+------+----+-------+
+|------|----|-------|
 |group_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
 ### Association
@@ -59,9 +56,8 @@ Things you may want to cover:
 - belongs_to :user
 
 ## messagesテーブル
-+------+----+-------+
 |Column|Type|Options|
-+------+----+-------+
+|------|----|-------|
 |text|text||
 |image|string||
 |user_id|integer|null: false|
