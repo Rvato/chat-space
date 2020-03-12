@@ -1,0 +1,43 @@
+!!!
+%html
+  %head
+  %body
+  .chat-main
+    .chat-main__group-info
+      .chat-main__group-info__left-block
+        .chat-main__group-info__left-block__group
+          group
+        .chat-main__group-info__left-block__member
+          Member : yuuki
+        .chat-main__group-info__edit-btn
+          Edit
+
+    .chat-main__messsage-list
+      .chat-main__messsage-list__message-box
+        .chat-main__messsage-list__message-box__name-data1
+          .chat-main__messsage-list__message-box__name-data1__message-name1
+            yuuki
+          .chat-main__messsage-list__message-box__name-data1__message-data1
+            2020/03/06(Fri.) 08:20:01
+        .chat-main__messsage-list__message-box__message-text1
+          おはよう！
+        .chat-main__messsage-list__message-box__name-data2
+          .chat-main__messsage-list__message-box__name-data2__message-name2
+            yuuki
+          .chat-main__messsage-list__message-box__name-data2__message-data2
+            2020/03/06(Fri.) 17:43:34
+        .chat-main__messsage-list__message-box__message-text2
+          今日は夜から雨
+
+    .chat-main__message-form
+      .chat-main__message-form__type-a-message
+        .chat-main__message-form__type-a-message__text
+          type a message
+        .chat-main__message-form__type-a-message__image
+          %icons.far.fa-image
+        .chat-main__message-form__type-a-message__image-label
+          %label{class: "chat-main__message-form__type-a-message__image"}
+            = icon('far', 'fa-image')
+            %input{type: "file"}
+      .chat-main__message-form__submit-btn
+        Send

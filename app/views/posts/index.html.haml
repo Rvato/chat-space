@@ -1,0 +1,18 @@
+.header
+  .header__logo
+    SNS
+.contents
+  .contents__message
+    follow me!
+  = link_to "https://www.facebook.com/", class: "contents__btn contents__btn--facebook" do
+    = icon('fab', 'facebook-square', class: "contents__btn--icon")
+    %span<>
+      Facebook
+  = link_to "https://twitter.com/", class: "contents__btn contents__btn--twitter" do
+    = icon('fab', 'twitter', class: "contents__btn--icon")
+    %span<>
+      Twitter
+  = link_to "https://www.instagram.com/", class: "contents__btn contents__btn--instagram" do
+    = icon('fab', 'instagram', class: "contents__btn--icon")
+    %span<>
+      Instagram

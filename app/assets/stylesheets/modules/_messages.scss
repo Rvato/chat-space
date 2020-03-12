@@ -1,0 +1,229 @@
+* {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+}
+
+// color変数
+  $dark_navy: #253141;
+  $light_navy: #2f3e51;
+  $white: #ffffff;
+  $dull_white: #fafafa;
+  $gray: #999999;
+  $light_gray: #d2d2d2;
+  $black: #333333;
+  $light_black: #434A54;
+  $sky_blue: #38aef0;
+
+.side-bar {
+  position: fixed;
+  height: 100%;
+  width: 300px;
+  
+  &__user-name {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    background-color: $dark_navy;
+    &__top-items {
+      display: flex;
+      justify-content: space-between;
+      margin: auto;
+      height: 20px;
+      width: 260px;
+      background-color: $dark_navy;
+      &__name {
+        display: flex;
+        width: 200px;
+        color: $white;
+        font-weight: bold;
+      }
+      &__icon {
+        display: flex;
+        width: 40px;
+        text-decoration: none;
+        color: $white;
+      }
+    }
+  }
+  
+  &__group-list {
+    height: calc(100vh - 100px);
+    background-color: $light_navy;
+    &__block {
+      height: 100%;
+      color: $white;
+      font-weight: bold;
+      &__name {
+        margin: auto;
+        padding-top: 20px;
+        font-size: 15px;
+        line-height: 15px;
+        height: 15px;
+        width: 260px;
+      }
+      &__text {
+        margin: auto;
+        padding-top: 20px;
+        font-size: 11px;
+        line-height: 11px;
+        height: 11px;
+        width: 260px;
+      }
+    }
+  }
+}
+
+.chat-main {
+  position: fixed;
+  margin-left: 300px;
+  height: 100%;
+  width: calc(100vw - 300px);
+
+  &__group-info {
+    display: flex;
+    position: relative;
+    height: 100px;
+    background-color: $white;
+    &__left-block {
+      justify-content: flex-start;
+      &__group {
+        position: absolute;
+        top: 0;
+        height: 20px;
+        margin: 35px 0 0 40px;
+        font-size: 20px;
+        color: $black;
+        line-height: 20px;
+      }
+      &__member {
+        position: absolute;
+        bottom: 0;
+        height: 12px;
+        margin: 15px 0 0 40px;
+        font-size: 12px;
+        color: $gray;
+        line-height: 12px;
+      }
+    }
+    &__edit-btn {
+      position: absolute;
+      right: 0;
+      height: 40px;
+      width: 72px;
+      margin: 30px 40px 30px 0;
+      border: solid 1px $sky_blue;
+      background-color: $white;
+      font-size: 16px;
+      text-align: center;
+      line-height: 40px;
+      color: $sky_blue;
+    }
+  }
+
+  &__messsage-list {
+    height: calc(100vh - 190px);
+    background-color: $dull_white;
+    &__message-box {
+      height: 100%;
+      width: 500px;
+      margin-left: 40px;
+      &__name-data1 {
+        display: flex;
+        height: 16px;
+        &__message-name1 {
+          height: 16px;
+          width: 60px;
+          font-size: 16px;
+          color: $black;
+          margin-top: 35px;
+        }
+        &__message-data1 {
+          height: 12px;
+          font-size: 12px;
+          color: $gray;
+          margin-top: 35px;
+        }
+      }
+      &__message-text1 {
+        height: 14px;
+        font-size: 14px;
+        color: $light_black;
+        margin-top: 63px;
+      }
+      &__name-data2 {
+        display: flex;
+        height: 16px;
+        &__message-name2 {
+          height: 16px;
+          width: 60px;
+          font-size: 16px;
+          color: $black;
+          margin-top: 46px;
+        }
+        &__message-data2 {
+          height: 12px;
+          font-size: 12px;
+          color: $gray;
+          margin-top: 46px;
+        }
+      }
+      &__message-text2 {
+        height: 14px;
+        font-size: 14px;
+        color: $light_black;
+        margin-top: 63px;
+      }
+    }
+  }
+
+  &__message-form {
+    display: flex;
+    position: relative;
+    height: 90px;
+    background-color: $light_gray;
+    &__type-a-message {
+      display: flex;
+      position: relative;
+      left: 0;
+      margin: 20px 15px 20px 40px;
+      height: 50px;
+      background-color: $white;
+      &__text {
+        left: 0;
+        margin-left: 10px;
+        height: 50px;
+        width: 90%;
+        font-size: 16px;
+        color: $gray;
+        line-height: 50px;
+      }
+      &__image {
+        position: absolute;
+        right: 10px;
+        height: 50px;
+        width: 30px;
+        line-height: 50px;
+      }
+      &__image-label {
+        position: absolute;
+        right: 10px;
+        height: 50px;
+        width: 30px;
+        line-height: 50px;
+      }
+    }
+    &__submit-btn {
+      right: 0;
+      margin: 20px 40px 20px 0;
+      height: 50px;
+      width: 100px;
+      border: solid 1px $sky_blue;
+      background-color: $sky_blue;
+      font-size: 16px;
+      color: $white;
+      text-align: center;
+      line-height: 50px;
+    }
+  }
+}
