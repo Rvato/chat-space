@@ -1,7 +1,5 @@
 * {
   box-sizing: border-box;
-  height: 100%;
-  width: 100%;
 }
 
 @import "variables";
@@ -46,10 +44,11 @@
     background-color: $dull-white;
     &__namedate-1 {
       height: 16px;
-      width: 300px;
+      width: 200px;
       display: flex;
       margin-left: 40px;
       padding-top: 23px;
+      justify-content: space-between;
       &__name-1 {
         color: $black;
         font-size: 16px;
@@ -61,7 +60,7 @@
     }
     &__message-1 {
       height: 14px;
-      width: 300px;
+      width: 200px;
       color: $dark-gray;
       font-size: 14px;
       margin-left: 40px;
@@ -69,10 +68,11 @@
     }
     &__namedate-2 {
       height: 16px;
-      width: 300px;
+      width: 200px;
       display: flex;
       margin-left: 40px;
       padding-top: 23px;
+      justify-content: space-between;
       &__name-2 {
         color: $black;
         font-size: 16px;
@@ -84,7 +84,7 @@
     }
     &__message-2 {
       height: 14px;
-      width: 300px;
+      width: 200px;
       color: $dark-gray;
       font-size: 14px;
       margin-left: 40px;
@@ -98,12 +98,14 @@
     background-color: $light-gray;
     position: fixed;
     display: flex;
+    bottom: 0;
     &__box {
       height: 50px;
       width: calc(100vw - 465px);
       background-color: $white;
       display: flex;
       margin: 20px 0 20px 40px;
+      justify-content: space-between;
       &__message {
         color: $gray;
         font-size: 16px;

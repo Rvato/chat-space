@@ -1,7 +1,5 @@
 * {
   box-sizing: border-box;
-  height: 100%;
-  width: 100%;
 }
 
 @import "variables";
@@ -17,18 +15,20 @@
     height: 100px;
     background-color: $navy;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     &__name {
       height: 20px;
       width: 200px;
-      margin: 40px 0 0 20px;
+      margin: 40px 20px 40px 20px;
     }
     &__icon {
       height: 20px;
       width: 30px;
-      right: 20px;
-      margin: 40px 20px 0 0;
+      margin: auto;
       display: flex;
+      a {
+        color: $white;
+      }
     }
   }
 
