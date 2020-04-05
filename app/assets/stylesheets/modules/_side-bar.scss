@@ -2,8 +2,6 @@
   box-sizing: border-box;
 }
 
-@import "variables";
-
 .side-bar {
   position: fixed;
   height: 100%;
@@ -39,6 +37,9 @@
       height: 15px;
       font-size: 15px;
       padding: 20px 20px 0 20px;
+      a {
+        color: $white;
+      }
     }
     &__message {
       height: 11px;
