@@ -1,4 +1,5 @@
-.message
+//メッセージ全体にidを付与。  ※ #{message.id}はjbuilderファイルで定義している
+.message{"data-message-id": "#{message.id}"}
   .upper-message
     .upper-message__user-name
       = message.user.name
