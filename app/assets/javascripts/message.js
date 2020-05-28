@@ -68,7 +68,8 @@ $(function(){
 
   //自動更新用の関数定義
   let reloadMessages = function () {
-
+    //今いるページのリンクが/groups/グループID/messagesのパスとマッチすれば以下を実行
+    if (window.location.href.match(/\/groups\/\d+\/messages/)){
       //ブラウザに表示されている最後のメッセージからidを取得して、変数に代入
       let last_message_id = $('.message:last').data("message-id");
 
@@ -80,32 +81,31 @@ $(function(){
         type: 'get',
         //データはjson型で
         dataType: 'json',
-        //キーを自分で決め（今回はｌａｓｔ_id)そこに先ほど定義したlast_message_idを代入。これはコントローラーのparamsで取得される。
+        //キーを自分で決め（今回はlast_id)そこに先ほど定義したlast_message_idを代入。これはコントローラーのparamsで取得される
         data: {last_id: last_message_id} 
       })
 
-    //doneの処理
-    .done(function(messages) {
-      if (messages.length !== 0) {
-        //追加するhtmlの入れ物をつくる
-        let insertHTML = '';
-        //取得したメッセージたちをEach文で分解
-        messages.forEach(function (message) {
-        //htmlを作り出して、それを変数に代入(作り出す処理は非同期の時に作った)
-        insertHTML = buildHTML(message);
-        });
-        //変数に代入されたhtmlをmessagesクラスにぶち込む
-        $('.messages').append(insertHTML);
-        $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
-      }
-    })
+      //doneの処理
+      .done(function(messages) {
+        if (messages.length !== 0) {
+          //追加するhtmlの入れ物をつくる
+          let insertHTML = '';
+          //取得したメッセージたちをEach文で分解
+          messages.forEach(function (message) {
+          //htmlを作り出して、それを変数に代入(作り出す処理は非同期の時に作った)
+          insertHTML = buildHTML(message);
+          });
+          //変数に代入されたhtmlをmessagesクラスにぶち込む
+          $('.messages').append(insertHTML);
+          $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
+        }
+      })
   
-    //failの処理
-    .fail(function() {
-      alert('自動更新に失敗しました');
-    });
-  };
-  if (document.location.href.match(/\/groups\/\d+\/messages/)) {
-    setInterval(reloadMessages, 2000);
+      //failの処理
+      .fail(function() {
+        alert('自動更新に失敗しました');
+      });
+    };
+    setInterval(reloadMessages, 5000);
   }
 });

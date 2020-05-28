@@ -30,6 +30,9 @@
       line-height: 40px;
       margin-top: 28px;
       padding: 0 20px;
+      a {
+        color: $light_blue;
+      }
     }
   }
 
@@ -39,7 +42,7 @@
   li{
     padding-right: 5px;
   }
-  
+
   .messages {
     background-color: #FAFAFA;
     box-sizing: border-box;
