@@ -33,6 +33,13 @@
     }
   }
 
+  ul {
+    display: flex;
+  }
+  li{
+    padding-right: 5px;
+  }
+  
   .messages {
     background-color: #FAFAFA;
     box-sizing: border-box;
