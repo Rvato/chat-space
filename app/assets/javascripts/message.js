@@ -2,7 +2,7 @@ $(function(){
   function buildHTML(message){
     if ( message.image ) {
      var html =
-      `<div class="message">
+      `<div class="message" data-message-id="${message.id}">
         <div class="upper-message">
           <div class="upper-message__user-name">
             ${message.user_name}
@@ -22,7 +22,7 @@ $(function(){
     } 
     else {
      var html =
-      `<div class="message">
+      `<div class="message" data-message-id="${message.id}">
         <div class="upper-message">
           <div class="upper-message__user-name">
             ${message.user_name}
@@ -68,8 +68,6 @@ $(function(){
 
   //自動更新用の関数定義
   let reloadMessages = function () {
-    //今いるページのリンクが/groups/グループID/messagesのパスとマッチすれば以下を実行
-    if (window.location.href.match(/\/groups\/\d+\/messages/)){
       //ブラウザに表示されている最後のメッセージからidを取得して、変数に代入
       let last_message_id = $('.message:last').data("message-id");
 
@@ -106,6 +104,8 @@ $(function(){
         alert('自動更新に失敗しました');
       });
     };
-    setInterval(reloadMessages, 5000);
+    //今いるページのリンクが/groups/グループID/messagesのパスとマッチすれば以下を実行
+    if (window.location.href.match(/\/groups\/\d+\/messages/)){
+      setInterval(reloadMessages, 5000);
   }
 });
